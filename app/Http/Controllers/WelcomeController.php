@@ -32,5 +32,8 @@ class WelcomeController extends Controller {
 	{
 		return view('welcome');
 	}
-
+	public function entersite()
+		{
+			return view('page.mainpage');
+		}
 }
