@@ -18,6 +18,7 @@ Route::get('entersite', 'WelcomeController@entersite');
 Route::get('home', 'HomeController@index');
 Route::get('map', 'WelcomeController@map');
 Route::get('circle', 'WelcomeController@circle');
+Route::get('detail/{id}', 'HomeController@detail');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

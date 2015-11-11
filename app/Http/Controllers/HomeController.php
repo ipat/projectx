@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use DB;
+
 class HomeController extends Controller {
 
 	/*
@@ -32,6 +34,13 @@ class HomeController extends Controller {
 	{
 		return view('home');
 	}
-	
+	public function detail($id)
+	{
+		$article = DB::table('articles')->where('id', $id)->first();
+		// var_dump($article);
+		if($article == NULL)
+			return "ERROR";
+		return view('page.detail')->with('article', $article);
+	}
 
 }
