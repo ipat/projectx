@@ -1,43 +1,7 @@
-<html>
-	<head>
-		<title>CU Comunity</title>
-		
+@extends('app')
 
-<meta charset="utf-8">
-<style>
-
-.node {
-  cursor: pointer;
-}
-
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
-.node text {
-  font: 10px sans-serif;
-}
-
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
-}
-
-</style>
-<body>
+@section('content')  
+<link rel="stylesheet" type="text/css" href="{{ url('css/d3Style.css') }}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script src="{{ url('js/d3Script.js') }}"></script>
-
-
-	</head>
-	<body>
-
-		<h1>hey</h1>
-		
-
-	</body>
-
-</html>
+@endsection

@@ -9,6 +9,9 @@
 
 				<div class="panel-body">
 					You are logged in!
+					<ul>
+						<li><a href="{{ url('detail/1') }}">physic</a></li>
+					</ul>	
 				</div>
 			</div>
 		</div>
