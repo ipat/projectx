@@ -1,0 +1,128 @@
+{
+ "name": "Computer Science",
+ "children": [
+  {
+   "name": "Java",
+   "children": [
+    {"name": "2301251 Requirement Engineering Process",	"size": 5074 },
+    {"name": "2301278 System Programming","size": 5074},
+    {"name": "2301361 System Analysis and Design","size": 5000},
+    {"name": "2301274 Computer System",
+     "children": 
+     [
+      {"name": "2301376 Computer Organization", "size": 5074}
+     ]
+    },
+   {"name": "2301369 Data Communication",
+     "children": 
+     [
+      {"name": "2301469 Data Communication II", "size": 5074},
+      {"name": "2301362 Computer Network Design", "size": 5074},
+      {"name": "2301370 Computer Network Programming", "size": 5074}
+     ]
+    }
+
+
+
+
+   ]
+  },
+  {
+   "name": "Data",
+   "children": [
+    
+    {"name": "2301368 Image Processing",
+     "children": 
+     [
+      {"name": "2301468 Computer vision", "size": 5074}
+     ]
+    },
+   {"name": "2301375 Database Systems",
+     "children": 
+     [
+      {"name": "2301461 Advanced Database Systems", "size": 5074},
+      {"name": "2301463 Distributed Database Systems", "size": 5074},
+      {"name": "2301456 Introduction to Data Warehouse and Data Mining", "size": 5074}
+     ]
+    },
+    {"name": "2301367 Software Engineering Methodology and Development",
+     "children": 
+     [
+      {"name": "2301451 Software Testing", "size": 5074},
+      {"name": "2301452 Software Design", "size": 5074},
+      {"name": "2301478 Software Project Management", "size": 5074},
+      {"name": "2301479 Object-Oriented Analysis and Design", "size": 5074}
+     ]
+    }
+
+    ]
+	},
+	{
+   "name": "Discrete",
+   "children": [
+    {"name": "2301321 Combinatorics and Graph Theory",	"size": 5074 },
+    {"name": "2301379 Theoy of Computation",
+     "children": 
+     [
+      {"name": "2301472 Theory of Langauge and Automata", "size": 5074}
+     ]
+    }
+   
+
+    ]
+	},
+	{
+   "name": "Discrete+Data",
+   "children": [
+   
+    {"name": "2301365 Algorithm Design and Analysis",
+     "children": 
+     [
+      {"name": "2301570 Evolution Computation and Applications", "size": 5074},
+      {"name": "2301472 Advanced Data Structures", "size": 5074},
+      {"name": "2301475 logic and Functional Programming", "size": 5074},
+      {"name": "2301476 Artificial Intelligence and Expert System", "size": 5074}
+     ]
+    }
+   
+
+    ]
+	},
+	{
+   "name": "Data+Computer Systems",
+   "children": [
+   
+    {"name": "2301371 Operating Systems",
+     "children": 
+     [
+      {"name": "2301462 Distributed Operating Systems", "size": 5074}
+     ]
+    }
+   
+
+    ]
+	},
+	{
+   "name": "วิชาหมวดวิทย์",
+   "children": [
+   
+    {"name": "ฟิสิกข์",	"size": 5074 },
+    {"name": "เคมี","size": 5074},
+    {"name": "ชีวะ","size": 5000}
+   
+
+    ]
+	},
+	{
+   "name": "Gen-ed",
+   "children": [
+   
+    {"name": "วิทย์",	"size": 5074 },
+    {"name": "สังคม","size": 5074},
+    {"name": "สห","size": 5000},
+   	{"name": "มนุษย์","size": 5000}
+
+    ]
+	}
+  ]
+}
