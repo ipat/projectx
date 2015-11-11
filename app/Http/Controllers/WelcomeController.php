@@ -36,4 +36,12 @@ class WelcomeController extends Controller {
 		{
 			return view('page.mainpage');
 		}
+	public function map()
+	{
+		return view('page.map');
+	}
+		public function circle()
+	{
+		return view('page.circle');
+	}
 }
