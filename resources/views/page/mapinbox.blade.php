@@ -1,30 +1,25 @@
 @extends('app')
 
 @section('content')  
-<link rel="stylesheet" type="text/css" href="{{ url('css/d3Style.css') }}">
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> -->
 
-
-
-      <script src="{{ url('js/d3.min.js') }}"></script>
-       <script src="{{ url('js/d3Script.js') }}"></script>
-   
-      <!--     
+        
         <div class="container">
          <div class="row">
            <div class="col-md-10 col-md-offset-1">
               <div class="panel panel-default">
                  <div class="panel-heading">Tree Map</div>
                     <div class="panel-body">
-                        <script src="{{ url('js/d3.min.js') }}"></script>
-                        <script src="{{ url('js/d3Script.js') }}"></script>
+                         <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="http://localhost:8888/projectxx/public/mapp" marginleft="20" width="100%" height="300" marginwidth="20" marginheight="0" scrolling="no"></iframe>
+          
            
                     </div>
               </div>
             </div>
          </div>
       </div>
-  -->
+
 
 
 <div class="container">

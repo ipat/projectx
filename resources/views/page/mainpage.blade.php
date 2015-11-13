@@ -47,6 +47,7 @@
 			<div class="content">
 				<div class="title">CUcomunity</div>
 				<div class="body">you need to log in first</div>
+				<li><a href="{{ url('home') }}">Home</a></li>
 				<li><a href="{{ url('map') }}">Map</a></li>
 				<li><a href="{{ url('/auth/login') }}">Login</a></li>
 				<li><a href="{{ url('/auth/register') }}">Register</a></li>

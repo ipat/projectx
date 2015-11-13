@@ -73,7 +73,7 @@ function update(source) {
 
    nodeEnter
        .append("a")
-         .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.id; })
+         .attr("xlink:href", function (d) { return "http://localhost:8888/projectxx/public/detail/" + d.id; })
        .append("rect")
           .attr("class", "clickable")
           .attr("y", -6)

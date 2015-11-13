@@ -41,9 +41,12 @@
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
+						<li><a href="{{ url('/fullfunctionmap') }}">fullfunctionmap</a></li>
+						<li><a href="{{ url('/mapinbox') }}">mapinbox</a></li>
 						<li><a href="{{ url('/map') }}">map</a></li>
 						<li><a href="{{ url('/map2') }}">map2</a></li>
 						<li><a href="{{ url('/mapstick') }}">mapstick</a></li>
+						<li><a href="{{ url('/mapstick2') }}">mapstick2</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -62,10 +65,10 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <p class="text-muted">Copyright &copy; Computer Science, Chulalongkorn University 2015</p>
   </div>
-</footer>
+</footer> -->
 
 </html>

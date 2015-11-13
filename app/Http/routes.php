@@ -20,7 +20,11 @@ Route::get('map', 'WelcomeController@map');
 Route::get('circle', 'WelcomeController@circle');
 Route::get('detail/{id}', 'HomeController@detail');
 Route::get('mapstick', 'HomeController@mapstick');
+Route::get('mapstick2', 'HomeController@mapstick2');
 Route::get('map2', 'HomeController@map2');
+Route::get('fullfunctionmap', 'HomeController@fullfunctionmap');
+Route::get('mapinbox', 'HomeController@mapinbox');
+Route::get('mapp', 'HomeController@mapp');
 
 
 Route::controllers([

@@ -46,9 +46,25 @@ class HomeController extends Controller {
 	{
 		return view('page.mapstick');
 	}
+	public function mapstick2()
+	{
+		return view('page.mapstick2');
+	}
 	public function map2()
 	{
 		return view('page.map2');
 	}
 
+	public function fullfunctionmap()
+	{
+		return view('page.fullfunctionmap');
+	}
+	public function mapinbox()
+	{
+		return view('page.mapinbox');
+	}
+	public function mapp()
+	{
+		return view('page.mapp');
+	}
 }
