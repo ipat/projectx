@@ -19,6 +19,9 @@ Route::get('home', 'HomeController@index');
 Route::get('map', 'WelcomeController@map');
 Route::get('circle', 'WelcomeController@circle');
 Route::get('detail/{id}', 'HomeController@detail');
+Route::get('mapstick', 'HomeController@mapstick');
+Route::get('map2', 'HomeController@map2');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

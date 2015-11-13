@@ -56,21 +56,33 @@ function update(source) {
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append("g")
       .attr("class", "node")
-          .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; });
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+      
 
-      nodeEnter.append("circle")
-          .attr("r", 1e-6)
-          .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; }).on("click", click);
+  nodeEnter.append("circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+      .on("click", click);
 
-      nodeEnter.append("text")
-          
-          .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-          .attr("dy", ".35em")
-          .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-          .text(function(d) { return d.name; })
-          .style("fill-opacity", 1e-6)
-          .attr("class", "hyper").on("click", clack);
+  nodeEnter.append("text")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6);
 
+   nodeEnter
+       .append("a")
+         .attr("xlink:href", function (d) { return "http://www.example.com/flare/" + d.id; })
+       .append("rect")
+          .attr("class", "clickable")
+          .attr("y", -6)
+          .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
+          .attr("width", 50) //2*4.5)
+          .attr("height", 12)
+          .style("fill", "lightsteelblue")
+          .style("fill-opacity", .3)        // set to 1e-6 to make transparent          
+      ;
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
       .duration(duration)
@@ -138,9 +150,4 @@ function click(d) {
     d._children = null;
   }
   update(d);
-}
-function clack(d) {
-    
-    window.location = "http://localhost:8888/projectxx/public/detail/"+d.id;
-    // window.location = "{{ url('/detail/1') }}";
 }

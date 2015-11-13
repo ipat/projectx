@@ -44,5 +44,6 @@ class WelcomeController extends Controller {
 	{
 		return view('page.circle');
 	}
+	
 		
 }

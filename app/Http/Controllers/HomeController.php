@@ -42,5 +42,13 @@ class HomeController extends Controller {
 			return "ERROR";
 		return view('page.detail')->with('article', $article);
 	}
+	public function mapstick()
+	{
+		return view('page.mapstick');
+	}
+	public function map2()
+	{
+		return view('page.map2');
+	}
 
 }

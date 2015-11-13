@@ -42,6 +42,8 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li><a href="{{ url('/map') }}">map</a></li>
+						<li><a href="{{ url('/map2') }}">map2</a></li>
+						<li><a href="{{ url('/mapstick') }}">mapstick</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -65,4 +67,5 @@
     <p class="text-muted">Copyright &copy; Computer Science, Chulalongkorn University 2015</p>
   </div>
 </footer>
+
 </html>
