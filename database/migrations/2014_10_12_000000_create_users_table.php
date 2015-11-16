@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration {
 			$table->string('major')->nullable();
 			$table->integer('student_id')->nullable();
 			$table->string('subject')->nullable();
+			$table->integer('admin_id')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

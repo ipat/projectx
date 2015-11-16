@@ -36,6 +36,41 @@
 						</div>
 
 						<div class="form-group">
+							<label class="col-md-4 control-label">First Name</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="name_first" value="{{ old('name_first') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Last Name</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="name_last" value="{{ old('name_last') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Faculty of</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="faculty" value="{{ old('faculty') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Major</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="major" value="{{ old('major') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Student ID</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="student_id" value="{{ old('student_id') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
 							<label class="col-md-4 control-label">Password</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">

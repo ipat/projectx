@@ -14,14 +14,14 @@ class CreateArticlesTable extends Migration {
 	{
 		Schema::create('articles', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('subject_id');
-			$table->string('title');
-			$table->text('body1');
-			$table->text('body2');
-			$table->text('body3');
-			$table->text('body4');
-			$table->text('comment');
+			$table->increments('articles_id');
+			$table->integer('subject_id');->nullable();
+			$table->string('title');->nullable();
+			$table->text('body1');->nullable();
+			$table->text('body2');->nullable();
+			$table->text('body3');->nullable();
+			$table->text('body4');->nullable();
+			$table->text('comment');->nullable();
 			$table->timestamps();
 		});
 	}
