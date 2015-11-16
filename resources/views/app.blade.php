@@ -47,6 +47,8 @@
 						<li><a href="{{ url('/map2') }}">map2</a></li>
 						<li><a href="{{ url('/mapstick') }}">mapstick</a></li>
 						<li><a href="{{ url('/mapstick2') }}">mapstick2</a></li>
+						<li><a href="{{ url('/mapcircle') }}">mapcircle</a></li>
+						
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

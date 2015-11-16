@@ -7,7 +7,7 @@
 
 
       
-       <script src="{{ url('js/jquery-1.10.2.min.js.js') }}"></script>
+    <script src="{{ url('js/jquery-1.10.2.min.js.js') }}"></script>
     <script src="{{ url('js/d3.v3.min.js') }}"></script>
     <script src="{{ url('js/dndtree.js') }}"></script>
 <body>

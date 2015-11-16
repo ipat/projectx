@@ -67,4 +67,22 @@ class HomeController extends Controller {
 	{
 		return view('page.mapp');
 	}
+	public function mapcircle()
+	{
+		return view('page.mapcircle');
+	}
+	
+	public function map()
+	{
+		return view('page.map');
+	}
+
+	public function pie()
+	{
+		return view('page.pie');
+	}
+	public function li()
+	{
+		return view('page.li');
+	}
 }

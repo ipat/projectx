@@ -33,14 +33,11 @@ class WelcomeController extends Controller {
 		return view('home');
 	}
 	public function entersite()
-		{
-			return view('page.mainpage');
-		}
-	public function map()
 	{
-		return view('page.map');
+		return view('page.mainpage');
 	}
-		public function circle()
+	
+	public function circle()
 	{
 		return view('page.circle');
 	}

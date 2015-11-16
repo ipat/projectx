@@ -1,4 +1,4 @@
-<script>
+
 
 var width = 960,
     height = 2200;
@@ -47,4 +47,3 @@ d3.json("/ProjectXX/flare.json", function(error, root) {
 
 d3.select(self.frameElement).style("height", height + "px");
 
-</script>

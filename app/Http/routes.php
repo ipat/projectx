@@ -16,7 +16,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('entersite', 'WelcomeController@entersite');
 Route::get('home', 'HomeController@index');
-Route::get('map', 'WelcomeController@map');
+Route::get('map', 'HomeController@map');
 Route::get('circle', 'WelcomeController@circle');
 Route::get('detail/{id}', 'HomeController@detail');
 Route::get('mapstick', 'HomeController@mapstick');
@@ -25,7 +25,9 @@ Route::get('map2', 'HomeController@map2');
 Route::get('fullfunctionmap', 'HomeController@fullfunctionmap');
 Route::get('mapinbox', 'HomeController@mapinbox');
 Route::get('mapp', 'HomeController@mapp');
-
+Route::get('mapcircle', 'HomeController@mapcircle');
+Route::get('pie', 'HomeController@pie');
+Route::get('li', 'HomeController@li');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
