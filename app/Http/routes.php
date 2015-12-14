@@ -28,6 +28,7 @@ Route::get('mapp', 'HomeController@mapp');
 Route::get('mapcircle', 'HomeController@mapcircle');
 Route::get('pie', 'HomeController@pie');
 Route::get('li', 'HomeController@li');
+Route::get('addcontent', 'HomeController@addcontent');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
