@@ -2,23 +2,23 @@
  "name": "Computer Science",
  "children": [
   {
-   "name": "Java",
+   "name": "Java", "link": 11,
    "children": [
-    {"name": "2301251 Requirement Engineering Process",	"size": 574 },
-    {"name": "2301278 System Programming","size": 574},
-    {"name": "2301361 System Analysis and Design","size": 500},
-    {"name": "2301274 Computer System",
+    {"name": "2301251 Requirement Engineering Process",	"size": 574 , "link": 12},
+    {"name": "2301278 System Programming","size": 574, "link": 12},
+    {"name": "2301361 System Analysis and Design","size": 500, "link": 12},
+    {"name": "2301274 Computer System", "link": 11,
      "children": 
      [
-      {"name": "2301376 Computer Organization", "size": 504}
+      {"name": "2301376 Computer Organization", "size": 504, "link": 12}
      ]
     },
-   {"name": "2301369 Data Communication",
+   {"name": "2301369 Data Communication", "link": 11,
      "children": 
      [
-      {"name": "2301469 Data Communication II", "size": 574},
-      {"name": "2301362 Computer Network Design", "size": 574},
-      {"name": "2301370 Computer Network Programming", "size": 574}
+      {"name": "2301469 Data Communication II", "size": 574, "link": 12},
+      {"name": "2301362 Computer Network Design", "size": 574, "link": 12},
+      {"name": "2301370 Computer Network Programming", "size": 574, "link": 12}
      ]
     }
 
@@ -28,60 +28,43 @@
    ]
   },
   {
-   "name": "Data",
+   "name": "Data", "link": 11,
    "children": [
     
-    {"name": "2301368 Image Processing",
+    {"name": "2301368 Image Processing", "link": 11,
      "children": 
      [
-      {"name": "2301468 Computer vision", "size": 507}
+      {"name": "2301468 Computer vision", "size": 507, "link": 11}
      ]
     },
-   {"name": "2301375 Database Systems",
+   {"name": "2301375 Database Systems", "link": 11,
      "children": 
      [
-      {"name": "2301461 Advanced Database Systems", "size": 504},
-      {"name": "2301463 Distributed Database Systems", "size": 574},
-      {"name": "2301456 Introduction to Data Warehouse and Data Mining", "size": 574}
+      {"name": "2301461 Advanced Database Systems", "size": 504, "link": 11},
+      {"name": "2301463 Distributed Database Systems", "size": 574, "link": 11},
+      {"name": "2301456 Introduction to Data Warehouse and Data Mining", "size": 574, "link": 11}
      ]
     },
-    {"name": "2301367 Software Engineering Methodology and Development",
+    {"name": "2301367 Software Engineering Methodology and Development", "link": 11,
      "children": 
      [
-      {"name": "2301451 Software Testing", "size": 574},
-      {"name": "2301452 Software Design", "size": 574},
-      {"name": "2301478 Software Project Management", "size": 504},
-      {"name": "2301479 Object-Oriented Analysis and Design", "size": 574}
+      {"name": "2301451 Software Testing", "size": 574, "link": 11},
+      {"name": "2301452 Software Design", "size": 574, "link": 11},
+      {"name": "2301478 Software Project Management", "size": 504, "link": 11},
+      {"name": "2301479 Object-Oriented Analysis and Design", "size": 574, "link": 11}
      ]
     }
 
     ]
 	},
 	{
-   "name": "Discrete",
+   "name": "Discrete", "link": 11,
    "children": [
-    {"name": "2301321 Combinatorics and Graph Theory",	"size": 507 },
-    {"name": "2301379 Theoy of Computation",
+    {"name": "2301321 Combinatorics and Graph Theory",	"size": 507 , "link": 11},
+    {"name": "2301379 Theoy of Computation", "link": 11,
      "children": 
      [
-      {"name": "2301472 Theory of Langauge and Automata", "size": 507}
-     ]
-    }
-   
-
-    ]
-	},
-	{
-   "name": "Discrete+Data",
-   "children": [
-   
-    {"name": "2301365 Algorithm Design",
-     "children": 
-     [
-      {"name": "2301570 Evolution Computation and Applications", "size": 504},
-      {"name": "2301472 Advanced Data Structures", "size": 507},
-      {"name": "2301475 logic and Functional Programming", "size": 507},
-      {"name": "2301476 Artificial Intelligence and Expert System", "size": 504}
+      {"name": "2301472 Theory of Langauge and Automata", "size": 507, "link": 11}
      ]
     }
    
@@ -89,13 +72,16 @@
     ]
 	},
 	{
-   "name": "Data+Computer Systems",
+   "name": "Discrete+Data", "link": 11,
    "children": [
    
-    {"name": "2301371 Operating Systems",
+    {"name": "2301365 Algorithm Design", "link": 11,
      "children": 
      [
-      {"name": "2301462 Distributed Operating Systems", "size": 507}
+      {"name": "2301570 Evolution Computation and Applications", "size": 504, "link": 11},
+      {"name": "2301472 Advanced Data Structures", "size": 507, "link": 11},
+      {"name": "2301475 logic and Functional Programming", "size": 507, "link": 11},
+      {"name": "2301476 Artificial Intelligence and Expert System", "size": 504, "link": 11}
      ]
     }
    
@@ -103,12 +89,26 @@
     ]
 	},
 	{
-   "name": "วิชาหมวดวิทย์",
+   "name": "Data+Computer Systems", "link": 11,
    "children": [
    
-    {"name": "ฟิสิกข์",	"size": 507 },
-    {"name": "เคมี","size": 574},
-    {"name": "ชีวะ","size": 500}
+    {"name": "2301371 Operating Systems", "link": 11,
+     "children": 
+     [
+      {"name": "2301462 Distributed Operating Systems", "size": 507, "link": 11}
+     ]
+    }
+   
+
+    ]
+	},
+	{
+   "name": "วิชาหมวดวิทย์", "link": 11,
+   "children": [
+   
+    {"name": "ฟิสิกข์",	"size": 507 , "link": 1 , "link": 11},
+    {"name": "เคมี","size": 574, "link": 11},
+    {"name": "ชีวะ","size": 500, "link": 11}
    
 
     ]
@@ -117,10 +117,10 @@
    "name": "Gen-ed",
    "children": [
    
-    {"name": "วิทย์",	"size": 507 },
-    {"name": "สังคม","size": 504},
-    {"name": "สห","size": 500},
-   	{"name": "มนุษย์","size": 500}
+    {"name": "วิทย์",	"size": 507 , "link": 11},
+    {"name": "สังคม","size": 504, "link": 11},
+    {"name": "สห","size": 500, "link": 11},
+   	{"name": "มนุษย์","size": 500, "link": 11}
 
     ]
 	}

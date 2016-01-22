@@ -137,10 +137,11 @@ function click(d) {
     d.children = d._children;
     d._children = null;
   }
+
   update(d);
 }
 function clack(d) {
     
-    window.location = "http://localhost:8888/projectxx/public/detail/"+d.id;
+    window.location = "http://localhost:8888/projectxx/public/detail/"+d.link;
     // window.location = "{{ url('/detail/1') }}";
 }
