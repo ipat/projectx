@@ -6,6 +6,10 @@ html {
 }
 body {
   margin: 0;
+  background-image : url('http://localhost:8888/ProjectXX/public/images/nnn.jpg'); 
+  background-repeat : no-repeat; 
+  background-attachment : fixed;
+  background-size: 100% 110%;
 }
 article,
 aside,
@@ -4606,8 +4610,9 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  /*background-color: #ffffff;*/
+  background-color: rgba(0,0,0,0.6);
+  /*border: 1px solid #dddddd;*/
   border-radius: 4px;
   transition: border 0.2s ease-in-out;
 }
@@ -4623,7 +4628,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: white;
 }
 .alert {
   padding: 15px;
@@ -4976,13 +4981,15 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+ /* background-color: #ffffff;*/
+  background-color: rgba(0,0,0,0.6);
   border: 1px solid transparent;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
   padding: 15px;
+  color: white;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -6227,6 +6234,8 @@ button.close {
   }
 }
 body,
+
+
 label,
 .checkbox label {
   font-weight: 300;

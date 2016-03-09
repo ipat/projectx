@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use DB;
-
+use Auth;
 class HomeController extends Controller {
 
 	/*
@@ -34,6 +34,15 @@ class HomeController extends Controller {
 	{
 		return view('home');
 	}
+	public function genmap()
+	{
+		$student_id=Auth::user()->student_id;
+		$gendata = DB::table('gendata')->where('student_id', $student_id)->select('name','parent','subject_id','realyear','depth')->get();
+		// var_dump($article);
+		if($gendata == NULL)
+			return "ERROR";
+		return view('page.genmap')->with('gendata', $gendata);
+	}
 	public function detail($id)
 	{
 		$article = DB::table('articles')->where('id', $id)->first();
@@ -48,7 +57,13 @@ class HomeController extends Controller {
 	}
 	public function mapstick2()
 	{
-		return view('page.mapstick2');
+		$student_id=Auth::user()->student_id;
+		$gendata = DB::table('gendata')->where('student_id', $student_id)->select('name','parent','subject_id','link','realyear','depth')->get();
+		// var_dump($article);
+		if($gendata == NULL)
+			return "ERROR";
+		
+		return view('page.mapstick2')->with('gendata', $gendata);
 	}
 	public function map2()
 	{
@@ -89,32 +104,36 @@ class HomeController extends Controller {
 	{
 		return view('page.addcontent');
 	}
-	public function postaddcontent()
+	public function addsubject()
 	{
-		// $rules = array(
-		// "id" => "required|unique:articles",
-		// "subject_id" => "required",
-		// "title" => "required");
-
-		// $validation = Validator::make(Input::all(), $rules);
-
-		// if($validation->fails()){
-		// return Redirect::to('/addcontent')->withErrors($validation)->withInput();
-		// }
-
-		$articles = new articles;
-		$articles->id = Input::get('id');
-		$articles->subject_id = Input::get('subject_id');
-		$articles->title = Input::get('title');
-		$articles->body1 = Input::get('body1');
-		$articles->body1 = Input::get('body2');
-		$articles->body1 = Input::get('body3');
-		$articles->body1 = Input::get('body4');
-		$articles->comment = Input::get('comment');
-		
-		if($articles->save()) return Redirect::to('/addcontent')->with('notify', 'ลงทะเบียนสำเร็จแล้ว');
-
-		return Redirect::to('/addcontent')->with('notify', 'Error');
+		return view('page.addsubject');
 	}
+	// public function postaddcontent()
+	// {
+	// 	// $rules = array(
+	// 	// "id" => "required|unique:articles",
+	// 	// "subject_id" => "required",
+	// 	// "title" => "required");
+
+	// 	// $validation = Validator::make(Input::all(), $rules);
+
+	// 	// if($validation->fails()){
+	// 	// return Redirect::to('/addcontent')->withErrors($validation)->withInput();
+	// 	// }
+
+	// 	$articles = new articles;
+	// 	$articles->id = Input::get('id');
+	// 	$articles->subject_id = Input::get('subject_id');
+	// 	$articles->title = Input::get('title');
+	// 	$articles->body1 = Input::get('body1');
+	// 	$articles->body1 = Input::get('body2');
+	// 	$articles->body1 = Input::get('body3');
+	// 	$articles->body1 = Input::get('body4');
+	// 	$articles->comment = Input::get('comment');
+		
+	// 	if($articles->save()) return Redirect::to('/addcontent')->with('notify', 'ลงทะเบียนสำเร็จแล้ว');
+
+	// 	return Redirect::to('/addcontent')->with('notify', 'Error');
+	// }
 
 }

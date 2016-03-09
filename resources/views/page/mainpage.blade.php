@@ -38,41 +38,41 @@
 			}
 
 			#bg {
-  background-image: url('freelancer-desk.jpg');
-  background-position: center top;
-  background-size: 1080px auto;
-  padding: 70px 90px 120px 90px;
-}
+			  background-image: url('freelancer-desk.jpg');
+			  background-position: center top;
+			  background-size: 1080px auto;
+			  padding: 70px 90px 120px 90px;
+			}
 
-#search {
-  padding: 20px;
-  background: rgb(34,34,34); /* for IE */
-  background: rgba(34,34,34,0.75);
-}
+			#search {
+			  padding: 20px;
+			  background: rgb(34,34,34); /* for IE */
+			  background: rgba(34,34,34,0.75);
+			}
 
-#search h2, #search h5, #search h5 a { text-align: center; color: #fefefe; font-weight: normal; }
-#search h2 { margin-bottom: 50px }
-#search h5 { margin-top: 70px }
+			#search h2, #search h5, #search h5 a { text-align: center; color: #fefefe; font-weight: normal; }
+			#search h2 { margin-bottom: 50px }
+			#search h5 { margin-top: 70px }
 
-a:link {
-    color: red;
-}
+			a:link {
+			    color: red;
+			}
 
-/* visited link */
-a:visited {
-    color: green;
-}
+			/* visited link */
+			a:visited {
+			    color: green;
+			}
 
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
+			/* mouse over link */
+			a:hover {
+			    color: hotpink;
+			}
 
-/* selected link */
-a:active {
-    color: blue;
-}
-a {font-size: 51px}
+			/* selected link */
+			a:active {
+			    color: blue;
+			}
+			a {font-size: 51px}
 
 
 		</style>

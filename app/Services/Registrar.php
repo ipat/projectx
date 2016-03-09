@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use DB;
 use App\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
@@ -29,6 +30,14 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+		DB::table('gendata')->insert([
+				'student_id' => $data['student_id'],
+				'name' => $data['name_first'],
+				'parent' => null,
+				'depth' => 0,
+				'created_at' => date("Y-m-d H:i:s"),
+				'updated_at' =>date("Y-m-d H:i:s")
+		]);
 		return User::create([
 			'username' => $data['username'],
 			'email' => $data['email'],

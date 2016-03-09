@@ -42,26 +42,34 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li><a href="{{ url('/fullfunctionmap') }}">fullfunctionmap</a></li>
-						<li><a href="{{ url('/mapinbox') }}">mapinbox</a></li>
-						<li><a href="{{ url('/map') }}">map</a></li>
-						<li><a href="{{ url('/map2') }}">map2</a></li>
-						<li><a href="{{ url('/mapstick') }}">mapstick</a></li>
-						<li><a href="{{ url('/mapstick2') }}">mapstick2</a></li>
-						<li><a href="{{ url('/mapcircle') }}">mapcircle</a></li>
+						
+						<li><a href="{{ url('/mapstick2') }}"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> my map</a></li>
+						<li class="dropdown">
+
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> another map <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/mapinbox') }}">mapinbox</a></li>
+								<li><a href="{{ url('/map') }}">map</a></li>
+								<li><a href="{{ url('/map2') }}">map2</a></li>
+								<li><a href="{{ url('/mapstick') }}">mapstick</a></li>
+								<li><a href="{{ url('/mapcircle') }}">mapcircle</a></li>
+							</ul>
+						</li>
 						
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<a href="{{ url('addcontent') }}">
 
 									<?php
 									if(Auth::user()->student_id==1111155555)
-								echo "Add content";
+								echo "->Add content<-";
 							?>
 
 							</a>
 							
-								
+								<li><a href="{{ url('/addsubject') }}">add subject</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -70,6 +78,22 @@
 			</div>
 		</div>
 	</nav>
+
+	@if( session('notify') )
+	<div class="container">
+		<div class="alert alert-success" role="alert">{{session('notify')}}</div>
+	</div>
+	@endif
+
+	
+	@if( session('error') )
+	<div class="container">
+		<div class="alert alert-danger" role="alert">{{session('error')}}</div>
+	</div>
+	@endif
+
+
+
 
 	@yield('content')
 

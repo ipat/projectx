@@ -7,7 +7,7 @@
 
 
       <script src="{{ url('js/d3.min.js') }}"></script>
-       <script src="{{ url('js/d3Script.js') }}"></script>
+      <script src="{{ url('js/d3Script.js') }}"></script>
    
       <!--     
         <div class="container">

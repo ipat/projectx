@@ -28,10 +28,18 @@
 
 <body>
 <script src="{{ url('js/d3.min.js') }}"></script>
-<script src="{{ url('js/d3Sstick2.js') }}"></script>
+<script type="text/javascript">
+
+    var data = <?php
+     echo json_encode($gendata);
+    ?>;
+
+    console.log(data);
+</script>
 
 
 <div class="container">
+  <div class="graph"></div>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
@@ -70,4 +78,6 @@
   </div>
 </div>
 
+
+<script src="{{ url('js/d3Sstick2.js') }}"></script>
 @endsection
