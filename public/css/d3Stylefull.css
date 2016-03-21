@@ -3,7 +3,7 @@
   }
 
   .overlay{
-      background-color:#EEE;
+      background-color:rgba(0,0,0,0.6);
   }
    
   .node circle {
@@ -13,13 +13,13 @@
   }
    
   .node text {
-    font-size:10px; 
+    font-size:15px; 
     font-family:sans-serif;
   }
    
   .link {
     fill: none;
-    stroke: #ccc;
+    stroke: steelblue;
     stroke-width: 1.5px;
   }
 

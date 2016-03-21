@@ -44,8 +44,8 @@
 
   <div class="graph">
   <ul class="nav nav-pills">
-  <li role="presentation"><a href="{{ url('listview') }}">List View</a></li>
-  <li role="presentation"><a href="{{ url('timeline') }}">Timeline view</a></li>
+  <li role="presentation"><a href="#">List View</a></li>
+  <li role="presentation"><a href="/timeline">Timeline view</a></li>
   </ul>
 </div>
   <div class="row">

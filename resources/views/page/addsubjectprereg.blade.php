@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Add Subject</div>
+				<div class="panel-heading">Add Subject Prereg</div>
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -22,7 +22,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/addsubject') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/addsubjectprereg') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group" style="color:black;">
@@ -41,19 +41,28 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Subject ID</label>
+						
+
+
+						<div class="form-group" style="color:black;">
+							<label class="col-md-4 control-label" style="color:white;">Subject ID</label>
 							<div class="col-md-6">
-								<input type="int" class="form-control" name="subject_id" value="{{ old('subject_id') }}">
+								<select name="subject_id" id="subject_id">
+									<?php
+
+									$data=DB::table('articles')->get();
+
+									foreach ($data as $data) {
+										echo "<option value=\"" . $data->subject_id . "\" selected>" . $data->subject_id . "</option>";
+									}
+
+									?>
+									
+								</select>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Subject Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+						
 
 						
 

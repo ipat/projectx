@@ -9,8 +9,17 @@
       
     <script src="{{ url('js/jquery-1.10.2.min.js.js') }}"></script>
     <script src="{{ url('js/d3.v3.min.js') }}"></script>
-    <script src="{{ url('js/dndtree.js') }}"></script>
+   
 <body>
+  <script type="text/javascript">
+
+    var data = <?php
+     echo json_encode($gendata);
+    ?>;
+
+    console.log(data);
+</script>
+
     <footer class="panel-footer" style="background-color: rgba(0,0,0,0.6);">
       <p>© Nobpo Payomrat buit from<a href="http://getbootstrap.com">Bootstrap</a> <a href="https://">Larravel</a> and <a href="https://">D3</a></p>
       
@@ -34,6 +43,6 @@
       </div>
   -->
 
-
+<script src="{{ url('js/dndtree2.js') }}"></script>
 
 @endsection

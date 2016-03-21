@@ -7,7 +7,7 @@
 
 
       <script src="{{ url('js/d3.min.js') }}"></script>
-      <script src="{{ url('js/d3Script.js') }}"></script>
+      
    
       <!--     
         <div class="container">
@@ -28,7 +28,10 @@
 
 
 <div class="container">
+
+  <div class="graph"></div> <!-- in clude here -->
   <div class="row">
+
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-heading">Home</div>
@@ -65,5 +68,7 @@
     </div>
   </div>
 </div>
+
+<script src="{{ url('js/d3Script.js') }}"></script>
 
 @endsection

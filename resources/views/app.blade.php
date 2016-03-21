@@ -28,12 +28,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('entersite') }}">CUcomunity</a>
+				<a class="navbar-brand" href="{{ url('entersite') }}"><span class="glyphicon glyphicon-subtitles" aria-hidden="true"></span> CUcomunity</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -41,7 +41,7 @@
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
-						<li><a href="{{ url('/fullfunctionmap') }}">fullfunctionmap</a></li>
+						<li><a href="{{ url('/fullfunctionmap') }}"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> fullfunctionmap</a></li>
 						
 						<li><a href="{{ url('/mapstick2') }}"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> my map</a></li>
 						<li class="dropdown">
@@ -60,16 +60,16 @@
 
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<a href="{{ url('addcontent') }}">
 
-									<?php
+								
+
+							<?php
 									if(Auth::user()->student_id==1111155555)
-								echo "->Add content<-";
+								echo "<li><a href=\"http://localhost:8888/projectxx/public/addcontent\">Add content</a></li>";
 							?>
-
-							</a>
 							
-								<li><a href="{{ url('/addsubject') }}">add subject</a></li>
+								<li><a href="{{ url('/addsubject') }}">Add subject</a></li>
+								<li><a href="{{ url('/addsubjectprereg') }}">Add subject prereg</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -79,23 +79,28 @@
 		</div>
 	</nav>
 
-	@if( session('notify') )
+	@if( session('notify') ) <!-- notify session -->
 	<div class="container">
 		<div class="alert alert-success" role="alert">{{session('notify')}}</div>
 	</div>
 	@endif
 
 	
-	@if( session('error') )
+	@if( session('error') ) 
 	<div class="container">
 		<div class="alert alert-danger" role="alert">{{session('error')}}</div>
 	</div>
 	@endif
 
-
+	@if( session('missing') ) 
+	<div class="container">
+		<div class="alert alert-danger" role="alert">you need to enter {{session('missing')}} before</div>
+	</div>
+	@endif
 
 
 	@yield('content')
+
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

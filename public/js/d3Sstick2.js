@@ -465,7 +465,7 @@ data.forEach(function(node) {
 
 
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
-    width = 960 - margin.right - margin.left,
+    width = 1200 - margin.right - margin.left,
     height = 800 - margin.top - margin.bottom;
 
 var i = 0,
@@ -534,10 +534,10 @@ function update(source) {
           .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
           .text(function(d) { return d.name; })
           .style("fill-opacity", 1e-6)
-          .style('fill', 'white')
+          .style('fill', 'white') 
           .style("font-size","19px")
           .attr("class", "hyper").on("click", clack);
-
+// เปลี่ยนสีตัวอักษร
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
       .duration(duration)
