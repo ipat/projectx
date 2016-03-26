@@ -214,9 +214,17 @@ class HomeController extends Controller {
 	{
 		return view('page.addcontent');
 	}
+	public function gradecal()
+	{
+		return view('page.gradecal');
+	}
 	public function addsubject()
 	{
 		return view('page.addsubject');
+	}
+	public function addprereg()
+	{
+		return view('page.addprereg');
 	}
 	public function addsubjectprereg()
 	{

@@ -53,7 +53,7 @@
 									$data=DB::table('articles')->get();
 
 									foreach ($data as $data) {
-										echo "<option value=\"" . $data->subject_id . "\" selected>" . $data->subject_id . "</option>";
+										echo "<option value=\"" . $data->id . "\" selected>" . $data->subject_id .' '. $data->title ."</option>";
 									}
 
 									?>

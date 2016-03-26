@@ -34,8 +34,8 @@
 						<td>" . $xxx->name . "</td>
 						<td>" . $xxx->parent . "</td>
 						<td><a href='http://localhost:8888/projectxx/public/detail/" . $xxx->link . "'> " . $xxx->link . " </a></td>
-						<td><a href='http://localhost:8888/projectxx/public/delete/" . $xxx->link . "'> edit </a></td>
-						<td><a href='http://localhost:8888/projectxx/public/delete/" . $xxx->link . "' class=\"btn btn-danger\"  role=\"button\">delete</a></p></td>
+						<td><a href='http://localhost:8888/projectxx/public/edit/" . $xxx->link . "'> edit </a></td>
+						<td><a href='http://localhost:8888/projectxx/public/delete/" . $xxx->link . "' class=\"btn btn-danger deleteLink\"  role=\"button\">delete</a></p></td>
 				  	  </tr>";
 			}
 		}
@@ -49,6 +49,12 @@
       <p>© Nobpo Payomrat buit from<a href="http://getbootstrap.com">Bootstrap</a> <a href="https://">Larravel</a> and <a href="https://">D3</a></p>
       
     </footer>
+
+<script type="text/javascript">
+	$(".deleteLink").click(function(){
+		return confirm('Are you sure?');
+	});
+</script>
 
 @endsection
 

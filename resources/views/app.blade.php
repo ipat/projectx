@@ -11,6 +11,11 @@
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
+
+
+	<!-- Scripts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -66,6 +71,7 @@
 							<?php
 									if(Auth::user()->student_id==1111155555)
 								echo "<li><a href=\"http://localhost:8888/projectxx/public/addcontent\">Add content</a></li>";
+								echo "<li><a href=\"http://localhost:8888/projectxx/public/addprereg\">Add Prereg</a></li>";
 							?>
 							
 								<li><a href="{{ url('/addsubject') }}">Add subject</a></li>
@@ -94,17 +100,13 @@
 
 	@if( session('missing') ) 
 	<div class="container">
-		<div class="alert alert-danger" role="alert">you need to enter {{session('missing')}} before</div>
+		<div class="alert alert-danger" role="alert">you need to enter {{session('missing')}} {{session('missing2')}} {{session('missing3')}} before</div>
 	</div>
 	@endif
 
 
 	@yield('content')
 
-
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 <!-- <footer class="footer">
   <div class="container">

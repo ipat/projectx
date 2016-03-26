@@ -30,7 +30,7 @@
 				echo "<tr>
 						<td>" . $newdata->subject_id . "</td>
 						<td>" . $newdata->title . "</td>
-						<td><a href='http://localhost:8888/projectxx/public/detail/" . $xxx->link . "' class=\"btn btn-primary\"  role=\"button\">view</a></p></td>
+						<td><a href='http://localhost:8888/projectxx/public/detail/" . $newdata->id . "' class=\"btn btn-primary\"  role=\"button\">view</a></p></td>
 				  	  </tr>";
 			}
 		}

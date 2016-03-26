@@ -30,6 +30,8 @@ Route::get('mapcircle', 'HomeController@mapcircle');
 Route::get('pie', 'HomeController@pie');
 Route::get('li', 'HomeController@li');
 Route::get('addcontent', 'HomeController@addcontent');
+Route::get('addprereg', 'HomeController@addprereg');
+Route::get('gradecal', 'HomeController@gradecal');
 Route::get('addsubject', 'HomeController@addsubject');
 Route::get('addsubjectprereg', 'HomeController@addsubjectprereg');
 Route::get('timeline', 'HomeController@timeline');
@@ -50,9 +52,9 @@ Route::post('/', function()
 {
 	$data['data'] = Input::get('data');
 
-	$newdata = DB::table('articles')->where('subject_id', $data)->orWhere('title', $data)->select('subject_id','title','id')->get();
-		// var_dump($article);
-		if($gendata == NULL)
+	$newdata = DB::table('articles')->where('subject_id', $data['data'])->orWhere('title', $data['data'])->select('subject_id','title','id')->get();
+		//var_dump($article);
+		if($newdata == NULL)
 			return "ERROR";
 		return view('page.search')->with('newdata', $newdata);	
 }
@@ -75,6 +77,35 @@ Route::post('addcontent', function()
 		DB::table('articles')->insert($articles);
 		return Redirect::to('/addcontent')->with('notify', 'เสร็จสิ้น');
 });
+
+Route::post('addprereg', function()
+{
+
+		$articles['subject_id'] = Input::get('subject_id');
+		$articles['number'] = Input::get('number');
+		$articles['prereg1'] = Input::get('prereg1');
+		$articles['prereg2'] = Input::get('prereg2');
+		$articles['prereg3'] = Input::get('prereg3');
+
+
+		DB::table('prereg')->insert($articles);
+		return Redirect::to('/addprereg')->with('notify', 'เสร็จสิ้น');
+});
+
+Route::post('gradecal', function()
+{
+
+		$a = Input::get('avggpa');
+		$b = Input::get('cgx');
+		$c = Input::get('thisgpa');
+		$d = Input::get('weight');
+
+
+		$x = (($a*$b)+($c*$d))/($b+$d);
+
+		return Redirect::to('/gradecal')->with('notify', $x);
+});
+
 Route::post('addsubject', function()
 {
 
@@ -194,7 +225,7 @@ Route::post('addsubjectprereg', function()
 
 						$check_sub = $check_sub1+$check_sub2;
 						if ($check_sub < 2) {
-							 return Redirect::to('/addsubjectprereg')->with('missing', $prereg->prereg1);
+							 return Redirect::to('/addsubjectprereg')->with('missing', $prereg->prereg1)->with('missing2', $prereg->prereg2);
 						}
 					}
 					else if ($prereg->number==3) {
@@ -207,7 +238,7 @@ Route::post('addsubjectprereg', function()
 
 						$check_sub = $check_sub1+$check_sub2+$check_sub3;
 						if ($check_sub < 3) {
-							 return Redirect::to('/addsubjectprereg')->with('error', 'need some subject before');
+							 return Redirect::to('/addsubjectprereg')->with('missing', $prereg->prereg1)->with('missing2', $prereg->prereg2)->with('missing3', $prereg->prereg3);
 						}
 					}
 		}

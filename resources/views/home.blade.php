@@ -91,13 +91,15 @@
 
 							<!-- search broken -->
 							<form method="POST">
-							<div class="input-group">
-				      		<span class="input-group-btn">
-				       		<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Go!</button>
-				      		</span>
-				      		<input type="text" class="form-control" name="data" value="{{ old('data') }}"  placeholder="Search for...">
-				    	</div>
-				    </form>
+								<div class="input-group">
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				      				<span class="input-group-btn">
+				       					<button class="btn btn-default" type="submit">
+			       						<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Go!</button>
+			      					</span>
+				      				<input type="text" class="form-control" name="data" value="{{ old('data') }}"  placeholder="Search for...">
+						    	</div>
+						    </form>
 					<!-- </ul> -->	
 						
 
@@ -105,10 +107,11 @@
 						<br>
 
 						<p>hello world</p>
+						<p><a href="#" class="btn btn-primary" role="button">Search Additional</a></p>
 						<p><a href="#" class="btn btn-primary" role="button">Add subject</a></p>
 						<p><a href="#" class="btn btn-primary" role="button">Add subject manual</a></p>
-						<p><a href="#" class="btn btn-primary" role="button">Grade calculation</a></p>
-						<a href="#" class="btn btn-primary" role="button">Grade prediction</a>
+						<p><a href="{{ url('/gradecal') }}" class="btn btn-primary" role="button">Grade calculation</a></p>
+						<p><a href="#" class="btn btn-primary" role="button">Grade prediction</a></p>
 					</div>
 
 				</div>
