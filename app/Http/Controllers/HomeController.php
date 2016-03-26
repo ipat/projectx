@@ -101,11 +101,15 @@ class HomeController extends Controller {
 	}
 	public function timeline()
 	{
+		$check = DB::table('gendata')->where('name', 'year2')->count();
+		if($check < 1)
+		{
 		DB::table('gendata')->insert([
-    						['student_id' => Auth::user()->student_id,'name' =>'year2','parent'=>'nobpo','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>'year2','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
     						['student_id' => Auth::user()->student_id,'name' =>'year3','parent'=>'year2','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
-    						['student_id' => Auth::user()->student_id,'name' =>'year4','parent'=>'year3','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>'year4','parent'=>'year3','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1]
 							]);
+		}
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year2 semester1')
@@ -174,6 +178,50 @@ class HomeController extends Controller {
 		return view('page.mapstick2')->with('gendata', $gendata);
 	}
 
+		public function genedmap()
+	{
+		DB::table('genedmap')->where('student_id', Auth::user()->student_id)->delete();
+		$first = DB::table('gendata')->where('student_id', Auth::user()->student_id)->where('parent', null)->select('subject_id','name','parent','subject_id','depth','year','realyear','link')->first();
+		DB::table('genedmap')->insert([['student_id' => Auth::user()->student_id,'name' =>$first->name,'parent'=>$first->parent,'depth'=>$first->depth,'realyear'=>$first->realyear,'link'=>$first->link]]);	
+
+		$gened = DB::table('gendata')->where('student_id', Auth::user()->student_id)->where('depth', 2)->select('subject_id','name','parent','subject_id','depth','year','realyear','link')->get();
+		
+		foreach($gened as $gened)
+		{
+		DB::table('genedmap')->insert([['student_id' => Auth::user()->student_id,'name' =>$gened->name,'parent'=>$gened->parent,'subject_id'=>$gened->subject_id,'depth'=>$gened->depth,'realyear'=>$gened->realyear,'link'=>$gened->link]]);
+		}
+		DB::table('genedmap')->insert([
+    						
+    						['student_id' => Auth::user()->student_id,'name' =>'Gened Sci','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>'Gened Human','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>'Gened Social','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>'Gened In','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'link'=>1]
+							]);
+
+        DB::table('genedmap')
+      		->where('student_id', Auth::user()->student_id)
+      		->whereBetween('subject_id', [3000000, 3600000])
+            ->update(['parent' => 'Gened Sci']);
+        DB::table('genedmap')
+      		->where('student_id', Auth::user()->student_id)
+      		->whereBetween('subject_id', [2000000, 3000000])
+            ->update(['parent' => 'Gened Human']);
+        DB::table('genedmap')
+      		->where('student_id', Auth::user()->student_id)
+      		->whereBetween('subject_id', [3800000, 3900000])
+            ->update(['parent' => 'Gened Social']);
+        DB::table('genedmap')
+      		->where('student_id', Auth::user()->student_id)
+      		->whereBetween('subject_id', [200000, 300000])
+            ->update(['parent' => 'Gened In']);
+       
+		$student_id=Auth::user()->student_id;
+		$gendata = DB::table('genedmap')->where('student_id', $student_id)->select('name','parent','subject_id','link','realyear','depth')->get();
+		// var_dump($article);
+		if($gendata == NULL)
+			return "ERROR";
+		return view('page.mapstick2')->with('gendata', $gendata);
+	}
 
 	public function map2()
 	{

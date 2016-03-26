@@ -181,7 +181,7 @@
 				      <div class="caption">
 				        <h3>Special technic to increase your gpa</h3>
 				        <p>There are a lot of technic that can help you increase your gpa as high as possible</p>
-				        <p><a href="#" class="btn btn-primary" role="button">see more</a> <a href="#" class="btn btn-default" role="button">send this</a></p>
+				        <p><a href="http://www.pickthebrain.com/blog/raise-your-gpa/" class="btn btn-primary" role="button">see more</a> <a href="#" class="btn btn-default" role="button">send this</a></p>
 				      </div>
 				    </div>
 				  </div>

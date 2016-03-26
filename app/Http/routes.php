@@ -36,6 +36,7 @@ Route::get('addsubject', 'HomeController@addsubject');
 Route::get('addsubjectprereg', 'HomeController@addsubjectprereg');
 Route::get('timeline', 'HomeController@timeline');
 Route::get('listview', 'HomeController@listview');
+Route::get('genedmap', 'HomeController@genedmap');
 Route::get('mysubject', 'HomeController@mysubject');
 Route::get('yourfullfunctionmap', 'HomeController@yourfullfunctionmap');
 Route::get('delete/{link}', 'HomeController@delete');
@@ -143,7 +144,7 @@ Route::post('addsubject', function()
 		         
 		     ];
 		    $rules = [
-		      'subject_id' => 'required|integer',
+		      //'subject_id' => 'required|integer',
 		      
 		    ];
 

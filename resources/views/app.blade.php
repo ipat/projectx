@@ -70,8 +70,8 @@
 
 							<?php
 									if(Auth::user()->student_id==1111155555)
-								echo "<li><a href=\"http://localhost:8888/projectxx/public/addcontent\">Add content</a></li>";
-								echo "<li><a href=\"http://localhost:8888/projectxx/public/addprereg\">Add Prereg</a></li>";
+								echo "<li><a href=\"http://localhost:8888/projectxx/public/addcontent\">Add content</a></li>
+								<li><a href=\"http://localhost:8888/projectxx/public/addprereg\">Add Prereg</a></li>";
 							?>
 							
 								<li><a href="{{ url('/addsubject') }}">Add subject</a></li>
