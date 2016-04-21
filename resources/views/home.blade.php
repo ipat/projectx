@@ -30,7 +30,7 @@
 						  <div class="progress-bar  progress-bar-striped" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" 	 
 						  				<?php 
 						  				$A = DB::table('gendata')->where('student_id', Auth::user()->student_id)->count(); 
-										$A = 100-((50-$A)/0.5);
+										$A = 100-((64-$A)/0.64);
 										echo "style=\"min-width: 2em; width:".$A."%;\"";
 										?>% > curret progress <?php echo $A?>%
 						   				
@@ -108,10 +108,10 @@
 
 						<p>hello world</p>
 						<p><a href="#" class="btn btn-primary" role="button">Search Additional</a></p>
-						<p><a href="#" class="btn btn-primary" role="button">Add subject</a></p>
-						<p><a href="#" class="btn btn-primary" role="button">Add subject manual</a></p>
+						<p><a href="{{ url('/addsubjectprereg') }}" class="btn btn-primary" role="button">Add subject</a></p>
+						<p><a href="{{ url('/addsubject') }}" class="btn btn-primary" role="button">Add subject manual</a></p>
 						<p><a href="{{ url('/gradecal') }}" class="btn btn-primary" role="button">Grade calculation</a></p>
-						<p><a href="#" class="btn btn-primary" role="button">Grade prediction</a></p>
+						<p><a href="{{ url('/viewall') }}" class="btn btn-primary" role="button">View all Subject</a></p>
 					</div>
 
 				</div>

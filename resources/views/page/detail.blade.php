@@ -39,7 +39,7 @@
                     <p>{{ $article->body3 }}</p>
        
                     <b>เว็บไซต์:</b></p>
-                    <p>{{ $article->body4 }}</p>
+                    <p><a href="{{ $article->body4 }}">{{ $article->body4 }}</p>
 
                  </div>
             </div>

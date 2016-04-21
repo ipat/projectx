@@ -41,7 +41,9 @@ Route::get('mysubject', 'HomeController@mysubject');
 Route::get('yourfullfunctionmap', 'HomeController@yourfullfunctionmap');
 Route::get('delete/{link}', 'HomeController@delete');
 Route::get('search', 'HomeController@search');
+Route::get('viewall', 'HomeController@viewall');
 // Route::post('addcontent', 'HomeController@postaddcontent');
+
 
 Route::post('delete', function()
 {
@@ -111,10 +113,13 @@ Route::post('addsubject', function()
 {
 
 		//$gendata['id'] = '15';
+		$xxx = Input::get('subject_id');
+		$yyy = Input::get('name');
+		$zzz = $xxx . " " . $yyy . "(manual add)";
 		
 		$gendata['student_id'] = Auth::user()->student_id;
 		$gendata['subject_id'] = Input::get('subject_id');
-		$gendata['name'] = Input::get('name');
+		$gendata['name'] = $zzz;
 		$gendata['parent'] = Input::get('parent');
 		$gendata['depth'] = 2;
 		$gendata['year'] = null;
@@ -192,10 +197,12 @@ Route::post('addsubjectprereg', function()
 {
 
 		//$gendata['id'] = '15';
-		
+		$aaa = DB::table('articles')->where('id', Input::get('subject_id'))->select('title')->first();
+		$bbb = Input::get('subject_id');
+		$ccc = $bbb." ".$aaa->title;
 		$gendata['student_id'] = Auth::user()->student_id;
 		$gendata['subject_id'] = Input::get('subject_id');
-		$gendata['name'] = Input::get('subject_id');
+		$gendata['name'] = $ccc;
 		$gendata['parent'] = Input::get('parent');
 		$gendata['depth'] = 2;
 		$gendata['year'] = null;
@@ -212,7 +219,7 @@ Route::post('addsubjectprereg', function()
 		if($check_pre == 1){
 					if ($prereg->number==1) {
 						$check_sub = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg1)->count();
+										->where('subject_id', $prereg->prereg1)->count();
 						if ($check_sub < 1) {
 
 							 return  Redirect::to('/addsubjectprereg')->with('missing', $prereg->prereg1);
@@ -220,9 +227,9 @@ Route::post('addsubjectprereg', function()
 					}
 					else if ($prereg->number==2) {
 						$check_sub1 = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg1)->count();
+										->where('subject_id', $prereg->prereg1)->count();
 						$check_sub2 = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg2)->count();
+										->where('subject_id', $prereg->prereg2)->count();
 
 						$check_sub = $check_sub1+$check_sub2;
 						if ($check_sub < 2) {
@@ -231,11 +238,11 @@ Route::post('addsubjectprereg', function()
 					}
 					else if ($prereg->number==3) {
 						$check_sub1 = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg1)->count();
+										->where('subject_id', $prereg->prereg1)->count();
 						$check_sub2 = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg2)->count();
+										->where('subject_id', $prereg->prereg2)->count();
 						$check_sub3 = DB::table('gendata')->where('student_id', Auth::user()->student_id)
-										->where('name', $prereg->prereg3)->count();
+										->where('subject_id', $prereg->prereg3)->count();
 
 						$check_sub = $check_sub1+$check_sub2+$check_sub3;
 						if ($check_sub < 3) {

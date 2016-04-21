@@ -100,40 +100,44 @@ class HomeController extends Controller {
 		return view('page.yourfullfunctionmap')->with('gendata', $gendata);
 	}
 	public function timeline()
-	{
-		$check = DB::table('gendata')->where('name', 'year2')->count();
+	{	$a = Auth::user()->name_first."'s year 2";
+		$b = Auth::user()->name_first."'s year 3";
+		$c = Auth::user()->name_first."'s year 4";
+		$check = DB::table('gendata')->where('name', $a)->count();
+		
+		
 		if($check < 1)
 		{
 		DB::table('gendata')->insert([
-    						['student_id' => Auth::user()->student_id,'name' =>'year2','parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
-    						['student_id' => Auth::user()->student_id,'name' =>'year3','parent'=>'year2','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
-    						['student_id' => Auth::user()->student_id,'name' =>'year4','parent'=>'year3','depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1]
+    						['student_id' => Auth::user()->student_id,'name' =>$a,'parent'=>Auth::user()->name_first,'depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>$b,'parent'=>$a,'depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1],
+    						['student_id' => Auth::user()->student_id,'name' =>$c,'parent'=>$b,'depth'=>1,'realyear'=>1,'updated_at'=>1,'created_at'=>1,'link'=>1]
 							]);
 		}
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year2 semester1')
-            ->update(['parent' => 'year2']);
+            ->update(['parent' => $a]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year2 semester2')
-            ->update(['parent' => 'year2']);
+            ->update(['parent' => $a]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year3 semester1')
-            ->update(['parent' => 'year3']);
+            ->update(['parent' => $b]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year3 semester2')
-            ->update(['parent' => 'year3']);
+            ->update(['parent' => $b]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year4 semester1')
-            ->update(['parent' => 'year4']);
+            ->update(['parent' => $c]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year4 semester2')
-            ->update(['parent' => 'year4']);  
+            ->update(['parent' => $c]);  
 
 		$student_id=Auth::user()->student_id;
 		$gendata = DB::table('gendata')->where('student_id', $student_id)->select('name','parent','subject_id','link','realyear','depth')->get();
@@ -149,27 +153,27 @@ class HomeController extends Controller {
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year2 semester1')
-            ->update(['parent' => 'nobpo']);
+            ->update(['parent' => Auth::user()->name_first]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year2 semester2')
-            ->update(['parent' => 'nobpo']);
+            ->update(['parent' => Auth::user()->name_first]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year3 semester1')
-            ->update(['parent' => 'nobpo']);
+            ->update(['parent' => Auth::user()->name_first]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year3 semester2')
-            ->update(['parent' => 'nobpo']);
+            ->update(['parent' => Auth::user()->name_first]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year4 semester1')
-            ->update(['parent' => 'nobpo']);
+            ->update(['parent' => Auth::user()->name_first]);
         DB::table('gendata')
       		->where('student_id', Auth::user()->student_id)
       		->where('name', 'year4 semester2')
-            ->update(['parent' => 'nobpo']);    
+            ->update(['parent' => Auth::user()->name_first]);    
 		$student_id=Auth::user()->student_id;
 		$gendata = DB::table('gendata')->where('student_id', $student_id)->select('name','parent','subject_id','link','realyear','depth')->get();
 		// var_dump($article);
@@ -200,19 +204,19 @@ class HomeController extends Controller {
 
         DB::table('genedmap')
       		->where('student_id', Auth::user()->student_id)
-      		->whereBetween('subject_id', [3000000, 3600000])
+      		->whereIn('subject_id', [201152,2100111,2101251,2102041,2100311,2105261,2107219,2107220,2107221,2110191,2110221,2111201,2111330,2112210,2142109,2300150,2300152,2300200,2301170,2302190,2303150,2303165,2304274,2305103,2305107,2305108,2305109,2305161,2306416,2307205,2307206,2308200,2308303,2308354,2309201,2310201,2312100,2313213,2313221,2313446,2314255,2314257,3010101,3141102,3141105,3141213,3200106,3200109,3200110,3301102,3304102,3306101,3307101,3305100,3305101,3309101,3309102,3310101,3600202,3600204,3600205,3600206,3600207,3600208,3600209,3640203,3700104,3700105,3700107,3700108,3700109,3700110,3700113,3700114,3705102,3705103,3741101,3741102,3741207,3742100,3742102,3742106,3743422,3900200,4000205,4000210])
             ->update(['parent' => 'Gened Sci']);
         DB::table('genedmap')
       		->where('student_id', Auth::user()->student_id)
-      		->whereBetween('subject_id', [2000000, 3000000])
+      		->whereIn('subject_id', [123101,123104,123105,201105,201211,2200222,2200223,2200226,2200227,2200183,2200185,2200201,2200330,2200387,2200389,2200390,2200392,2200394,2200395,2200396,2204180,2206101,2206248,2206247,2207103,2207143,2207201,2207203,2207341,2207361,2207363,2207365,2207371,2207375,2207385,2207387,2207467,2207472,2207474,2207478,2209341,2209373,2209375,2210214,2210215,2210216,2210217,2210218,2210219,2210235,2210239,2210313,2210314,2210315,2210316,2210323,2210420,2210423,2221433,2221485,22223243,2226001,2231255,2232241,2232253,2235320,2234482,2236103,2236204,2244151,1501191,2501292,2501295,2501296,2501297,2501298,2501299,2502291,2502292,2502330,2502378,2502379,2502393,2502430,2541151,2541152,2541154,2541155,2541156,2541157,2541158,2541159,2541162,2541163,2541168,2541169,2542001,2542002,2722272,2722288,2736101,2737110,3500111,3501120,3501214,3501217,3501222,3501224,3502222,3502271,3502272,3503111])
             ->update(['parent' => 'Gened Human']);
         DB::table('genedmap')
       		->where('student_id', Auth::user()->student_id)
-      		->whereBetween('subject_id', [3800000, 3900000])
+      		->whereIn('subject_id', [201170,201171,201172,2400104,2403183,2403184,2403284,1403185,2403471,2404300,2404301,2541160,2601111,2602121,2602171,2602241,2603244,2604362,2604364,2605311,2722178,2800210,2800211,2800212,2800218,2500219,2800221,2800314,2801321,2900151,2900152,2900154,3401124,3402103,3404103,3404109,3404113,3404115,3404117,3404122,3404123,3404124,3404201,3404202,3800101,3800105,3800202,3800250,3800251,3800351,4000203,4000204,4000206,4000208,4000209,5100101])
             ->update(['parent' => 'Gened Social']);
         DB::table('genedmap')
       		->where('student_id', Auth::user()->student_id)
-      		->whereBetween('subject_id', [200000, 300000])
+      		->whereIn('subject_id', [201102,201103,201106,201107,201108,201109,201110,201111,201117,201121,201122,201123,201125,201127,201129,201130,201131,201141,201151,201153,201154,201200,201201,201202,201203,201204,201205,201209,201210,201230,201231,201232,201234,201251,201252,201254,201255,201256,201270,201281,2104181,2305100,2305104,2305106,2502390,2503216,2504101,2506504,2750178,3018102,3000106,3000257,3000281,3000396,3300100,3303100,3303191,3305101,3800252,3800309,3914101])
             ->update(['parent' => 'Gened In']);
        
 		$student_id=Auth::user()->student_id;
@@ -285,7 +289,18 @@ class HomeController extends Controller {
 
 		$newdata = DB::table('articles')->where('subject_id', $data)->orWhere('title', $data)->select('subject_id','title','id')->get();
 		// var_dump($article);
-		if($gendata == NULL)
+		if($newdata == NULL)
+			return "ERROR";
+		return view('page.search')->with('newdata', $newdata);
+		
+	}
+	public function viewall()
+	{
+		
+
+		$newdata = DB::table('articles')->select('subject_id','title','id')->get();
+		// var_dump($article);
+		if($newdata == NULL)
 			return "ERROR";
 		return view('page.search')->with('newdata', $newdata);
 		
